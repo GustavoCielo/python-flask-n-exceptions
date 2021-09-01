@@ -14,8 +14,10 @@ def home():
 
 @app.get("/user")
 def user_get():
-    database_empty()
+    # print("i work")
+    # print(os.listdir(".app/database/"))
     path_exists()
+    database_empty()
 
     if os.path.exists("./app/database/database.json"):
         with open("./app/database/database.json", "r") as f:

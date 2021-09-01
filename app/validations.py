@@ -3,8 +3,12 @@ from json import dump
 
 
 def path_exists():
-    if not os.path.exists("./app/database/database.json"):
+    if not os.path.exists("./app/database/"):
         os.makedirs("./app/database/")
+        with open("./app/database/database.json", "w") as f:
+            dump({"data": []}, f, indent=4)
+            return {"data": []}, 200
+    elif not len(os.listdir("./app/database")):
         with open("./app/database/database.json", "w") as f:
             dump({"data": []}, f, indent=4)
             return {"data": []}, 200
