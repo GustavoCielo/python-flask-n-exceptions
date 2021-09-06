@@ -14,8 +14,6 @@ def home():
 
 @app.get("/user")
 def user_get():
-    # print("i work")
-    # print(os.listdir(".app/database/"))
     path_exists()
     database_empty()
 

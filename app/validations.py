@@ -23,6 +23,8 @@ def database_empty():
 
 
 def path_exists_request(user):
+    path_exists()
+    database_empty()
     if not os.path.exists("./app/database/database.json"):
         os.makedirs("./app/database/")
         with open("./app/database/database.json", "w") as f:
